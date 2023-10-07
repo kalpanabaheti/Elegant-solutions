@@ -350,10 +350,30 @@ def spiral():
 
 
 spiral()
+'''
+#8 - Combinations to reduce to 0
+'''
+def find_combinations(target, candidates):
+
+    result = []
+
+    def backtrack(start, target, combination):
+    
+        if target == 0:
+            result.append(combination)
+            return
+        elif target < 0:
+            return
+        for i in range(start, len(candidates)):
+            backtrack(i, target - candidates[i], combination + [candidates[i]])
+
+    backtrack(0, target, [])
+    return result
+
         
 '''
         
-#8 - Equilibrium point (sum of preceding elements = sum of succeeding elements)
+#9 - Equilibrium point (sum of preceding elements = sum of succeeding elements)
 
 '''
 
@@ -425,7 +445,7 @@ equilibrium()
 
 '''
 
-#9 - From 1 to N all numbers are listed, except 1, find the number
+#10 - From 1 to N all numbers are listed, except 1, find the number
 
 '''
 
@@ -473,7 +493,7 @@ def missing():
 missing()
 '''
 
-#10 - Best time to buy and sell stocks
+#11 - Best time to buy and sell stocks
 '''
 def stock():
 
@@ -523,7 +543,7 @@ def stock():
 stock()
 '''
             
-#11 - Minimum Platforms required for incoming and outgoing trains (waiting duration trains within a platform cannot overlap)
+#12 - Minimum Platforms required for incoming and outgoing trains (waiting duration trains within a platform cannot overlap)
 
 '''
 def platformcount():
@@ -616,7 +636,7 @@ def platformcount():
 platformcount()
 '''
 
-#12 - Merge two sorted arrays into single sorted array - do not use extra space - time complexity O((n+m)log(n+m))  
+#13 - Merge two sorted arrays into single sorted array - do not use extra space - time complexity O((n+m)log(n+m))  
 '''
 import time
 def merge():
@@ -682,7 +702,7 @@ def merge():
 merge()
 '''
         
-#13 - Find size of minimum subset that gives maximum binary result on OR operation
+#14 - Find size of minimum subset that gives maximum binary result on OR operation
 
 '''
 def orSubset():
@@ -785,7 +805,7 @@ def orSubset():
 orSubset()
 '''
 
-#14 - Number of ways of splitting a given string into 2 so that each substring has the same number of unique characters - optimized version
+#15 - Number of ways of splitting a given string into 2 so that each substring has the same number of unique characters - optimized version
 '''
 def splitString():
 
@@ -847,7 +867,7 @@ splitString()
 
 '''
 
-#15 - Finding minimum domino rotations for an equal row.
+#16 - Finding minimum domino rotations for an equal row.
 
 '''
 
@@ -922,7 +942,7 @@ print("\nMinimum Rotations: ",y)
                       
 '''
 
-#16 - Two people watering plants simultaneously from two ends, refilling needed if plant demand is more than water can supply, find the number of total refills of both people together.
+#17 - Two people watering plants simultaneously from two ends, refilling needed if plant demand is more than water can supply, find the number of total refills of both people together.
 
 '''
 def waterPlant():
@@ -1007,7 +1027,7 @@ y = waterPlant()
 print("Number of total refills: ",y)
 '''
 
-#17 - M people vote for their favorite fruits among N fruits (each person has their order of preference), the least popular fruit is removed till only one fruit is returned.
+#18 - M people vote for their favorite fruits among N fruits (each person has their order of preference), the least popular fruit is removed till only one fruit is returned.
 
 '''
 def favFruit():
@@ -1064,7 +1084,7 @@ s = favFruit()
 print("\nFav Fruit: ",s)
 '''
 
-#18 - Given a sequence of digits (1-9), check if they can be rearranged into a number divisible by 11.
+#19 - Given a sequence of digits (1-9), check if they can be rearranged into a number divisible by 11.
 #Need to work on time constraint - refer elevenagram on KickStart
 '''
 from itertools import combinations
